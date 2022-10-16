@@ -1,0 +1,2 @@
+inode_number=$(ls -id $1 | awk '{print $1}')
+sudo debugfs -R "stat <$inode_number>" /dev/mmcblk0p2 | grep crtime
