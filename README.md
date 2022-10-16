@@ -1,5 +1,5 @@
 # GetCrTime
-A stupidly simple way to get creation time on ext4 filesystems.
+A stupidly simple way to get creation time on ext4 filesystems. It's about time.
 
 # Usage
 getcrtime \<file or directory>
