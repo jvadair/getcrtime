@@ -1,2 +1,3 @@
 inode_number=$(ls -id $1 | awk '{print $1}')
-sudo debugfs -R "stat <$inode_number>" /dev/mmcblk0p2 | grep crtime
+device_id=$(df $1 | grep '^/' | cut -d' ' -f1)
+sudo debugfs -R "stat <$inode_number>" $device_id | grep crtime
