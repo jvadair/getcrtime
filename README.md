@@ -7,4 +7,4 @@ getcrtime \<file or directory>
 # Install
 Clone the file to somewhere on path.
 Ex:
-`cd /usr/bin; sudo wget https://gitlab.com/jvadair/getcrtime/-/raw/main/getcrtime`
+`cd /usr/bin; sudo wget https://gitlab.com/jvadair/getcrtime/-/raw/main/getcrtime; sudo chmod +x getcrtime`
