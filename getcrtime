@@ -1,3 +1,4 @@
-inode_number=$(ls -id $1 | awk '{print $1}')
-device_id=$(df $1 | grep '^/' | cut -d' ' -f1)
+args="${@}"
+inode_number=$(ls -id $args | awk '{print $args}')
+device_id=$(df $args | grep '^/' | cut -d' ' -f1)
 sudo debugfs -R "stat <$inode_number>" $device_id | grep crtime
