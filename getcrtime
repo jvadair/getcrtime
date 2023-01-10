@@ -1,4 +1,5 @@
 args="${@}"
-inode_number=$(ls -id $args | awk '{print $args}')
-device_id=$(df $args | grep '^/' | cut -d' ' -f1)
-sudo debugfs -R "stat <$inode_number>" $device_id | grep crtime
+file_path=`readlink -f "$args"`
+inode_number=$(ls -id "$file_path" | awk '{print $file_path}')
+device_id=$(df "$file_path" | grep '^/' | cut -d' ' -f1)
+sudo debugfs -R "stat \"$file_path\"" $device_id | grep crtime
